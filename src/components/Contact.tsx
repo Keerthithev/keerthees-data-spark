@@ -1,5 +1,6 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { Button } from '@/components/ui/button';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,17 +11,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
   
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
+  const [state, handleSubmit] = useForm("mdkgjlez");
   
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  useEffect(() => {
+    if (state.succeeded) {
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+    }
+  }, [state.succeeded, toast]);
 
   useEffect(() => {
     if (sectionRef.current) {
@@ -71,33 +73,6 @@ const Contact = () => {
     }
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
   return (
     <section id="contact" ref={sectionRef} className="py-20 relative">
       <div className="blur-light bottom-1/4 right-1/4" style={{ opacity: 0.05 }}></div>
@@ -116,8 +91,8 @@ const Contact = () => {
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-portfolio-blue/10 flex items-center justify-center">
-                    <Mail className="text-portfolio-blue" />
+                  <div className="w-12 h-12 rounded-full bg-portfolio-accent/10 flex items-center justify-center">
+                    <Mail className="text-portfolio-accent" />
                   </div>
                   <div>
                     <p className="text-sm text-portfolio-text-secondary">Email</p>
@@ -126,8 +101,8 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-portfolio-blue/10 flex items-center justify-center">
-                    <Phone className="text-portfolio-blue" />
+                  <div className="w-12 h-12 rounded-full bg-portfolio-accent/10 flex items-center justify-center">
+                    <Phone className="text-portfolio-accent" />
                   </div>
                   <div>
                     <p className="text-sm text-portfolio-text-secondary">Phone</p>
@@ -143,26 +118,26 @@ const Contact = () => {
                     href="https://github.com/Keerthithev" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="social-link w-12 h-12 rounded-full bg-portfolio-blue/10 hover:bg-portfolio-blue/20 flex items-center justify-center transition-colors"
+                    className="social-link w-12 h-12 rounded-full bg-portfolio-accent/10 hover:bg-portfolio-accent/20 flex items-center justify-center transition-colors"
                     aria-label="GitHub"
                   >
-                    <Github className="text-portfolio-blue" size={20} />
+                    <Github className="text-portfolio-accent" size={20} />
                   </a>
                   <a 
                     href="https://linkedin.com/in/keerthigan-t-225370251" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="social-link w-12 h-12 rounded-full bg-portfolio-blue/10 hover:bg-portfolio-blue/20 flex items-center justify-center transition-colors"
+                    className="social-link w-12 h-12 rounded-full bg-portfolio-accent/10 hover:bg-portfolio-accent/20 flex items-center justify-center transition-colors"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="text-portfolio-blue" size={20} />
+                    <Linkedin className="text-portfolio-accent" size={20} />
                   </a>
                   <a 
                     href="mailto:keerthigan.t@example.com" 
-                    className="social-link w-12 h-12 rounded-full bg-portfolio-blue/10 hover:bg-portfolio-blue/20 flex items-center justify-center transition-colors"
+                    className="social-link w-12 h-12 rounded-full bg-portfolio-accent/10 hover:bg-portfolio-accent/20 flex items-center justify-center transition-colors"
                     aria-label="Email"
                   >
-                    <Mail className="text-portfolio-blue" size={20} />
+                    <Mail className="text-portfolio-accent" size={20} />
                   </a>
                 </div>
               </div>
@@ -175,90 +150,103 @@ const Contact = () => {
                 <p>Available for part-time opportunities</p>
               </div>
               <p className="text-portfolio-text-secondary">
-                Currently focused on my studies, but open to freelance projects and part-time roles in web development and data science.
+                Currently focusing on my studies in data science, but open to freelance projects 
+                and part-time roles in web development and data science.
               </p>
             </div>
           </div>
           
-          {/* Contact Form */}
+          {/* Contact Form - Using Formspree */}
           <div className="contact-form card">
             <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
             
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">
-                  Name
-                </label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 bg-portfolio-background border border-portfolio-blue/20 focus:border-portfolio-blue rounded-lg outline-none transition-colors"
-                  placeholder="Your name"
-                />
+            {state.succeeded ? (
+              <div className="bg-green-500/10 text-green-500 p-6 rounded-lg text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h4 className="text-xl font-semibold mb-2">Message Sent!</h4>
+                <p>Thank you for reaching out. I'll get back to you soon.</p>
               </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  Email
-                </label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 bg-portfolio-background border border-portfolio-blue/20 focus:border-portfolio-blue rounded-lg outline-none transition-colors"
-                  placeholder="Your email"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-1">
-                  Subject
-                </label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-portfolio-background border border-portfolio-blue/20 focus:border-portfolio-blue rounded-lg outline-none transition-colors"
-                  placeholder="Subject of your message"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  Message
-                </label>
-                <textarea 
-                  id="message" 
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 bg-portfolio-background border border-portfolio-blue/20 focus:border-portfolio-blue rounded-lg outline-none transition-colors min-h-[150px]"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-              
-              <Button 
-                type="submit"
-                className="btn-primary w-full flex items-center justify-center gap-2"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>Sending... <div className="animate-spin h-4 w-4 border-2 border-white rounded-full border-t-transparent"></div></>
-                ) : (
-                  <>Send Message <Send size={18} /></>
-                )}
-              </Button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-1">
+                    Name
+                  </label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    required
+                    className="w-full px-4 py-2 bg-portfolio-background border border-portfolio-accent/20 focus:border-portfolio-accent rounded-lg outline-none transition-colors"
+                    placeholder="Your name"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-1">
+                    Email
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    required
+                    className="w-full px-4 py-2 bg-portfolio-background border border-portfolio-accent/20 focus:border-portfolio-accent rounded-lg outline-none transition-colors"
+                    placeholder="Your email"
+                  />
+                  <ValidationError 
+                    prefix="Email" 
+                    field="email"
+                    errors={state.errors}
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium mb-1">
+                    Subject
+                  </label>
+                  <input 
+                    type="text" 
+                    id="subject" 
+                    name="subject"
+                    className="w-full px-4 py-2 bg-portfolio-background border border-portfolio-accent/20 focus:border-portfolio-accent rounded-lg outline-none transition-colors"
+                    placeholder="Subject of your message"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-1">
+                    Message
+                  </label>
+                  <textarea 
+                    id="message" 
+                    name="message"
+                    required
+                    className="w-full px-4 py-2 bg-portfolio-background border border-portfolio-accent/20 focus:border-portfolio-accent rounded-lg outline-none transition-colors min-h-[150px]"
+                    placeholder="Your message"
+                  ></textarea>
+                  <ValidationError 
+                    prefix="Message" 
+                    field="message"
+                    errors={state.errors}
+                  />
+                </div>
+                
+                <Button 
+                  type="submit"
+                  className="btn-primary w-full flex items-center justify-center gap-2"
+                  disabled={state.submitting}
+                >
+                  {state.submitting ? (
+                    <>Sending... <div className="animate-spin h-4 w-4 border-2 border-white rounded-full border-t-transparent"></div></>
+                  ) : (
+                    <>Send Message <Send size={18} /></>
+                  )}
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </div>

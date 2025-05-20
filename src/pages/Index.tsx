@@ -76,7 +76,7 @@ const Index = () => {
       <button 
         id="back-to-top"
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-portfolio-blue shadow-lg flex items-center justify-center text-white opacity-0 invisible transition-all duration-300 z-50"
+        className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-portfolio-accent shadow-lg flex items-center justify-center text-white opacity-0 invisible transition-all duration-300 z-50"
         aria-label="Back to top"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

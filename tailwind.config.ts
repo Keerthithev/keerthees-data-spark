@@ -67,7 +67,7 @@ export default {
 					blue: '#3b82f6',
 					darkblue: '#1e40af',
 					lightblue: '#93c5fd',
-					accent: '#8b5cf6',
+					accent: '#8b5cf6',  // This is now purple instead of blue
 					background: '#0f172a',
 					"text-primary": '#f8fafc',
 					"text-secondary": '#94a3b8',

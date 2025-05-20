@@ -34,7 +34,7 @@ const Footer = () => {
               href="https://github.com/Keerthithev" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-portfolio-text-secondary hover:text-portfolio-blue transition-colors"
+              className="text-portfolio-text-secondary hover:text-portfolio-accent transition-colors"
               aria-label="GitHub"
             >
               <Github size={22} />
@@ -43,14 +43,14 @@ const Footer = () => {
               href="https://linkedin.com/in/keerthigan-t-225370251" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-portfolio-text-secondary hover:text-portfolio-blue transition-colors"
+              className="text-portfolio-text-secondary hover:text-portfolio-accent transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin size={22} />
             </a>
             <a 
               href="mailto:keerthigan.t@example.com" 
-              className="text-portfolio-text-secondary hover:text-portfolio-blue transition-colors"
+              className="text-portfolio-text-secondary hover:text-portfolio-accent transition-colors"
               aria-label="Email"
             >
               <Mail size={22} />
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <hr className="border-portfolio-blue/10 my-8" />
+        <hr className="border-portfolio-accent/10 my-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-portfolio-text-secondary text-sm mb-4 md:mb-0">
