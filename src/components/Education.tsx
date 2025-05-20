@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GraduationCap, Calendar, MapPin } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Book } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +67,7 @@ const Education = () => {
                 <div className="flex flex-wrap mt-3 gap-4">
                   <div className="flex items-center text-portfolio-text-secondary">
                     <Calendar size={16} className="mr-2" />
-                    <span>2023 - Present (3rd Year)</span>
+                    <span>2023 - Present (2nd Year, 2nd Semester)</span>
                   </div>
                   <div className="flex items-center text-portfolio-text-secondary">
                     <MapPin size={16} className="mr-2" />
@@ -76,18 +76,17 @@ const Education = () => {
                 </div>
                 
                 <p className="mt-4 text-portfolio-text-secondary">
-                  Currently focusing on Data Science specialization. Pursuing in-depth knowledge of
-                  machine learning, data analysis, and visualization techniques.
+                  Currently pursuing my degree in Computer Science. Planning to specialize in Data Science in my 3rd year (starting next year).
                 </p>
                 
                 <div className="mt-5 space-y-2">
                   <div className="flex items-start">
                     <div className="w-2 h-2 rounded-full bg-portfolio-accent mt-1.5 mr-2"></div>
-                    <p>Coursework includes Machine Learning, Data Mining, and Statistical Analysis</p>
+                    <p>Currently finishing 2nd year studies before specialization</p>
                   </div>
                   <div className="flex items-start">
                     <div className="w-2 h-2 rounded-full bg-portfolio-accent mt-1.5 mr-2"></div>
-                    <p>Working on research projects focused on data science applications</p>
+                    <p>Interested in exploring Data Science as my specialization path</p>
                   </div>
                 </div>
               </div>
@@ -105,7 +104,7 @@ const Education = () => {
               </div>
               
               <div className="pt-6">
-                <h3 className="text-xl font-semibold">Secondary Education</h3>
+                <h3 className="text-xl font-semibold">Advanced Level Secondary Education</h3>
                 <h4 className="text-lg text-portfolio-accent">Jaffna Hindu College</h4>
                 
                 <div className="flex flex-wrap mt-3 gap-4">
@@ -120,18 +119,17 @@ const Education = () => {
                 </div>
                 
                 <p className="mt-4 text-portfolio-text-secondary">
-                  Completed secondary education with a focus on mathematics and science subjects,
-                  building a strong foundation for my higher education in technology.
+                  Completed secondary education with a focus on mathematics stream, building a solid foundation for higher studies.
                 </p>
                 
                 <div className="mt-5 space-y-2">
                   <div className="flex items-start">
                     <div className="w-2 h-2 rounded-full bg-portfolio-accent mt-1.5 mr-2"></div>
-                    <p>Strong academic background in Mathematics and Physics</p>
+                    <p>Studied in Mathematics stream and achieved 3C grades</p>
                   </div>
                   <div className="flex items-start">
                     <div className="w-2 h-2 rounded-full bg-portfolio-accent mt-1.5 mr-2"></div>
-                    <p>Participated in science and technology extracurricular activities</p>
+                    <p>Developed strong analytical and problem-solving skills</p>
                   </div>
                 </div>
               </div>
@@ -145,7 +143,7 @@ const Education = () => {
             
             <div className="card relative">
               <div className="absolute -top-6 -left-6 w-12 h-12 rounded-full bg-portfolio-accent/10 flex items-center justify-center">
-                <GraduationCap className="text-portfolio-accent" />
+                <Book className="text-portfolio-accent" />
               </div>
               
               <div className="pt-6">
@@ -177,7 +175,6 @@ const Education = () => {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>

@@ -67,11 +67,14 @@ export default {
 					blue: '#3b82f6',
 					darkblue: '#1e40af',
 					lightblue: '#93c5fd',
-					accent: '#8b5cf6',  // This is now purple instead of blue
+					accent: '#9b87f5',  // Lighter purple for better visibility
 					background: '#0f172a',
 					"text-primary": '#f8fafc',
 					"text-secondary": '#94a3b8',
 					card: '#1e293b',
+					highlight: '#D6BCFA', // Light purple for highlights
+					secondary: '#7E69AB', // Secondary purple
+					tertiary: '#6E59A5', // Tertiary purple
 				}
 			},
 			borderRadius: {

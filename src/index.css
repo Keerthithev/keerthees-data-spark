@@ -23,7 +23,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 267 76% 66%; /* Changed to purple */
+    --accent: 267 76% 66%; /* Purple accent */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -79,13 +79,13 @@
     bottom: -8px;
     height: 4px;
     width: 50%;
-    background: linear-gradient(to right, theme('colors.portfolio.accent'), theme('colors.portfolio.blue'));
+    background: linear-gradient(to right, theme('colors.portfolio.accent'), theme('colors.portfolio.highlight'));
     border-radius: 2px;
   }
   
   .gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(to right, theme('colors.portfolio.accent'), theme('colors.portfolio.blue'));
+    background-image: linear-gradient(to right, theme('colors.portfolio.accent'), theme('colors.portfolio.highlight'));
   }
 
   .card {
@@ -96,10 +96,20 @@
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #1e293b, #1a2334);
   }
 
   .skill-pill {
-    @apply px-4 py-2 rounded-full text-sm font-medium bg-portfolio-card border border-portfolio-accent/30 hover:border-portfolio-accent transition-colors duration-300;
+    @apply px-4 py-2 rounded-full text-sm font-medium border transition-colors duration-300;
+    background: linear-gradient(145deg, #1e293b, #1a2334);
+    border-color: theme('colors.portfolio.accent');
+    border-width: 1px;
+    border-opacity: 0.3;
+  }
+  
+  .skill-pill:hover {
+    border-color: theme('colors.portfolio.accent');
+    background: rgba(155, 135, 245, 0.1);
   }
 
   .nav-link {
@@ -114,7 +124,7 @@
     bottom: -5px;
     height: 2px;
     width: 0;
-    background: linear-gradient(to right, theme('colors.portfolio.accent'), theme('colors.portfolio.blue'));
+    background: linear-gradient(to right, theme('colors.portfolio.accent'), theme('colors.portfolio.highlight'));
     transition: width 0.3s ease;
     border-radius: 1px;
   }
@@ -125,22 +135,24 @@
 
   .btn-primary {
     @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-300 transform;
-    background: linear-gradient(to right, theme('colors.portfolio.accent'), theme('colors.portfolio.blue'));
-    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.5);
+    background: linear-gradient(to right, theme('colors.portfolio.accent'), theme('colors.portfolio.highlight'));
+    box-shadow: 0 4px 14px rgba(155, 135, 245, 0.5);
   }
   
   .btn-primary:hover {
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.7);
+    box-shadow: 0 6px 20px rgba(155, 135, 245, 0.7);
     transform: translateY(-2px);
   }
 
   .btn-outline {
-    @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-300 border border-portfolio-accent text-portfolio-accent;
+    @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-300 border text-portfolio-accent;
     background: transparent;
+    border-color: theme('colors.portfolio.accent');
   }
   
   .btn-outline:hover {
     @apply bg-portfolio-accent/10;
+    transform: translateY(-2px);
   }
 
   .blur-light {
@@ -173,6 +185,46 @@
     }
     50% {
       border-color: theme('colors.portfolio.accent');
+    }
+  }
+  
+  .glass-effect {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(155, 135, 245, 0.2);
+  }
+  
+  .shine-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shine-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    20% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
     }
   }
 }
