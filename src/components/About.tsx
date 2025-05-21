@@ -82,13 +82,13 @@ const About = () => {
                 <Linkedin size={18} />
                 LinkedIn
               </a>
-              <a 
+              {/* <a 
                 href="#" 
                 className="btn-outline flex items-center gap-2"
               >
                 <FileText size={18} />
                 Resume
-              </a>
+              </a> */}
             </div>
           </div>
           
