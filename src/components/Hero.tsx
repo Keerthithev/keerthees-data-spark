@@ -124,9 +124,9 @@ tl.from(contentCard, {
                 <a href="#projects" className="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-lg font-medium transition-all hover:shadow-lg hover:shadow-blue-500/20 flex items-center gap-2 transform transition-all hover:scale-105">
                   View Projects <ArrowRight size={18} />
                 </a>
-                <a href="/resume.pdf" download className="px-6 py-3 border border-blue-500/30 text-portfolio-text-primary rounded-lg font-medium transition-all hover:bg-blue-500/10 flex items-center gap-2 transform transition-all hover:scale-105">
+                {/* <a href="/resume.pdf" download className="px-6 py-3 border border-blue-500/30 text-portfolio-text-primary rounded-lg font-medium transition-all hover:bg-blue-500/10 flex items-center gap-2 transform transition-all hover:scale-105">
                   Download Resume <Download size={18} />
-                </a>
+                </a> */}
                 <a href="#contact" className="px-6 py-3 border border-indigo-500/30 text-portfolio-text-primary rounded-lg font-medium transition-all hover:bg-indigo-500/10 transform transition-all hover:scale-105">
                   Contact Me
                 </a>
