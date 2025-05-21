@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FileText, Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, FileText } from 'lucide-react';
 
 // Register plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +44,7 @@ const About = () => {
 
   return (
     <section id="about" ref={sectionRef} className="py-20 relative">
-      <div className="blur-light top-1/4 right-1/4" style={{ opacity: 0.05 }}></div>
+      <div className="blur-light top-1/4 right-1/4" style={{ opacity: 0.05, background: 'rgba(243, 156, 18, 0.2)' }}></div>
       
       <div className="container mx-auto px-4">
         <h2 className="section-title animate-item">About Me</h2>
@@ -52,7 +52,7 @@ const About = () => {
         <div ref={contentRef} className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
           <div className="space-y-6">
             <p className="text-lg text-portfolio-text-secondary animate-item">
-              Hello! I'm Keerthigan, a second-year student at Northern University, Slit, specializing in Data Science. I'm passionate about analyzing data, building web applications, and solving problems with code.
+              Hello! I'm Keerthigan, a second-year student at Northern Uni, Slit, specializing in Data Science. I'm passionate about analyzing data, building web applications, and solving problems with code.
             </p>
             
             <p className="text-lg text-portfolio-text-secondary animate-item">
@@ -94,16 +94,16 @@ const About = () => {
           
           <div className="about-image relative">
             <div className="w-full h-80 md:h-96 rounded-xl overflow-hidden">
-              <div className="w-full h-full bg-portfolio-card p-1 rounded-xl">
+              <div className="w-full h-full bg-portfolio-card p-1 rounded-xl border border-portfolio-accent/10">
                 <img 
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-                  alt="Person coding" 
+                  src="images/nothernuni.jpg"
+                  alt="Northern University" 
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-portfolio-card px-5 py-3 rounded-lg shadow-lg">
-              <p className="text-lg font-semibold">Northern University</p>
+            <div className="absolute -bottom-6 -left-6 bg-portfolio-card px-5 py-3 rounded-lg shadow-lg border border-portfolio-primary/10">
+              <p className="text-lg font-semibold">Northern Uni | SLIIT</p>
               <p className="text-sm text-portfolio-text-secondary">Data Science Student</p>
             </div>
           </div>

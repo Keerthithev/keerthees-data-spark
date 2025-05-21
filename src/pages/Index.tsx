@@ -80,7 +80,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-portfolio-background">
+    <div className="relative overflow-hidden bg-fixed bg-cover bg-center" 
+         style={{backgroundImage: 'linear-gradient(rgba(10, 25, 47, 0.92), rgba(10, 25, 47, 0.95)), url("https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")'}}>
       <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none"></div>
       <Navbar />
       <Hero />

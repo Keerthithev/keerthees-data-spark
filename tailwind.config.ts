@@ -118,7 +118,10 @@ export default {
 				'fade-in': 'fade-in 0.4s ease-out',
 				'slide-up': 'slide-up 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.4s ease-out'
-			}
+			},
+			backgroundImage: {
+        "hero-pattern": "url('https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')",
+      },
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

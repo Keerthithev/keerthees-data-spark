@@ -96,7 +96,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-portfolio-text-secondary">Email</p>
-                    <p className="font-medium">keerthigan.t@example.com</p>
+                    <p className="font-medium">keerthiganthevarasa@gmail.com</p>
                   </div>
                 </div>
                 
@@ -106,7 +106,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-portfolio-text-secondary">Phone</p>
-                    <p className="font-medium">+94 77 123 4567</p>
+                    <p className="font-medium">+94 77 804 3115</p>
                   </div>
                 </div>
               </div>
@@ -133,7 +133,7 @@ const Contact = () => {
                     <Linkedin className="text-portfolio-accent" size={20} />
                   </a>
                   <a 
-                    href="mailto:keerthigan.t@example.com" 
+                    href="mailto:keerthiganthevarasa@gmail.com" 
                     className="social-link w-12 h-12 rounded-full bg-portfolio-accent/10 hover:bg-portfolio-accent/20 flex items-center justify-center transition-colors"
                     aria-label="Email"
                   >
