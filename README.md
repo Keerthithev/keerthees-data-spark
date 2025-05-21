@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+# 🌐 Keerthi Dev – Personal Portfolio Website
 
-## Project info
+> A modern, responsive, and professional portfolio website built with React, TypeScript, and Tailwind CSS.  
+> Designed to showcase projects, skills, and experience with smooth animations and a sleek dark theme inspired by JARVIS/Iron Man UI aesthetics.
 
-**URL**: https://lovable.dev/projects/b624f8d8-cc31-4c20-8a53-de4f3d263933
+---
 
-## How can I edit this code?
+## 🚀 Live Demo
 
-There are several ways of editing your application.
+[https://keerthidev.vercel.app](https://keerthidev.vercel.app)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b624f8d8-cc31-4c20-8a53-de4f3d263933) and start prompting.
+## 📋 About This Project
 
-Changes made via Lovable will be committed automatically to this repo.
+This portfolio website was **developed with the help of Loveable AI for initial scaffolding and coding suggestions, then fully manually edited, enhanced, and refined in Visual Studio Code** to ensure professional quality, pixel-perfect design, and optimal user experience.
 
-**Use your preferred IDE**
+It serves as a personal showcase of my projects, skills, and experience in a clean, visually attractive format optimized for desktop and mobile.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠 Technologies Used
 
-Follow these steps:
+- **React** with **TypeScript**  
+- **Tailwind CSS** for utility-first styling  
+- **GSAP** + **ScrollTrigger** for animations  
+- **Lucide React Icons** for crisp SVG icons  
+- **GitHub REST API** for fetching live project data  
+- **Vercel** for CI/CD and hosting
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+## ⚡️ Key Features
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- **Responsive Design** — adapts smoothly to mobile, tablet, and desktop screen sizes  
+- **Dark Themed UI** — inspired by JARVIS/Iron Man for a futuristic tech look  
+- **Live GitHub Projects Data** — fetches repositories via GitHub REST API dynamically  
+- **Smooth Animations** — GSAP and ScrollTrigger-powered transitions and effects  
+- **Clean Codebase** — built with React + TypeScript and Tailwind CSS for fast styling  
+- **Error Handling & Fallbacks** — fallback static data loads if GitHub API fails or rate limits  
+- **Accessibility** — keyboard navigable and screen reader friendly
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
 
-**Use GitHub Codespaces**
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)  
+- npm (comes with Node.js) or yarn
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Setup
 
-## What technologies are used for this project?
+1. Clone the repository:
+   
+ - git clone https://github.com/Keerthithev/keerthees-data-spark.git
+ - cd keerthees-data-spark
 
-This project is built with:
+2. Install dependencies:  
+   `npm install` or `yarn install`
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. Start the development server:  
+   `npm run dev` or `yarn dev`
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/b624f8d8-cc31-4c20-8a53-de4f3d263933) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
